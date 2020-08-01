@@ -1,0 +1,14 @@
+{
+  "template": "guardduty-*",
+  "settings": {},
+  "mappings": {
+      "properties": {
+        "detail.service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation": {
+          "type": "geo_point"
+        },
+        "detail.service.action.networkConnectionAction.remoteIpDetails.geoLocation": {
+          "type": "geo_point"
+        }
+      }
+  }
+}

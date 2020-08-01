@@ -1,0 +1,216 @@
+{
+  "index_patterns": ["cloudtrail-*"],
+  "settings": {
+    "number_of_shards": 8,
+    "number_of_replicas": 1,
+    "mapping": {
+      "total_fields": {
+        "limit": 10000
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "@version" : {
+          "type" : "integer"
+        },
+        "additionalEventData" : {
+          "properties" : {
+            "LoginTo" : {
+              "type" : "keyword"
+            },
+            "MFAUsed" : {
+              "type" : "keyword"
+            },
+            "MobileVersion" : {
+              "type" : "keyword"
+            },
+            "Note" : {
+              "type" : "text"
+            },
+            "SamlProviderArn" : {
+              "type" : "keyword"
+            },
+            "vpcEndpointId" : {
+              "type" : "keyword"
+            }
+          }
+        },
+        "apiVersion" : {
+          "type" : "keyword"
+        },
+        "awsRegion" : {
+          "type" : "keyword"
+        },
+        "errorCode" : {
+          "type" : "keyword"
+        },
+        "errorMessage" : {
+          "type" : "text"
+        },
+        "eventID" : {
+          "type" : "keyword"
+        },
+        "eventName" : {
+          "type" : "keyword"
+        },
+        "eventSource" : {
+          "type" : "keyword"
+        },
+        "eventType" : {
+          "type" : "keyword"
+        },
+        "eventVersion" : {
+          "type" : "double"
+        },
+        "readOnly" : {
+          "type" : "boolean"
+        },
+        "recipientAccountId" : {
+          "type" : "keyword"
+        },
+        "requestID" : {
+          "type" : "keyword"
+        },
+        "requestParameters" : {
+          "type": "object",
+          "properties": {
+            "iamInstanceProfile": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "keyword"
+                },
+                "arn": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "logStreamNamePrefix": {
+              "type": "text"
+            },
+            "macItems": {
+              "type": "text"
+            },
+            "role": {
+              "type": "text"
+            },
+            "filter": {
+              "type": "text"
+            }
+          }
+        },
+        "configurationItems" : {
+          "type": "object",
+          "properties": {
+            "configuration.state": {
+              "type": "text"
+            }
+          }
+        },
+        "resources" : {
+          "properties" : {
+            "ARN" : {
+              "type" : "keyword"
+            },
+            "accountId" : {
+              "type" : "keyword"
+            },
+            "type" : {
+              "type" : "keyword"
+            }
+          }
+        },
+        "responseElements" : {
+          "type": "object"
+        },
+        "serviceEventDetails" : {
+          "type": "object"
+        },
+        "sharedEventID" : {
+          "type" : "keyword"
+        },
+        "sourceIPAddress" : {
+          "type" : "keyword"
+        },
+        "tags" : {
+          "type" : "keyword"
+        },
+        "type" : {
+          "type" : "keyword"
+        },
+        "userAgent" : {
+          "type" : "keyword"
+        },
+        "userIdentity" : {
+          "properties" : {
+            "accessKeyId" : {
+              "type" : "keyword"
+            },
+            "accountId" : {
+              "type" : "keyword"
+            },
+            "arn" : {
+              "type" : "keyword"
+            },
+            "identityProvider" : {
+              "type" : "keyword"
+            },
+            "invokedBy" : {
+              "type" : "keyword"
+            },
+            "principalId" : {
+              "type" : "keyword"
+            },
+            "sessionContext" : {
+              "properties" : {
+                "attributes" : {
+                  "properties" : {
+                    "creationDate" : {
+                      "type" : "date"
+                    },
+                    "mfaAuthenticated" : {
+                      "type" : "boolean"
+                    }
+                  }
+                },
+                "sessionIssuer" : {
+                  "properties" : {
+                    "accountId" : {
+                      "type" : "keyword"
+                    },
+                    "arn" : {
+                      "type" : "keyword"
+                    },
+                    "principalId" : {
+                      "type" : "keyword"
+                    },
+                    "type" : {
+                      "type" : "keyword"
+                    },
+                    "userName" : {
+                      "type" : "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "type" : {
+              "type" : "keyword"
+            },
+            "userName" : {
+              "type" : "keyword"
+            }
+          }
+        },
+        "vpcEndpointId" : {
+          "type" : "keyword"
+        }
+      }
+    }
+  }
+}
